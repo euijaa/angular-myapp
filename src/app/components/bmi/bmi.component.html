@@ -1,0 +1,36 @@
+<div>
+    Weight:
+    <input type="range" 
+    min="20" max ="150" step = "1" 
+    [(ngModel)]="person.weight"/>
+    {{person.weight}}
+    Kg.
+</div>
+<div>
+    Height: 
+    <input type="number" [(ngModel)]="person.height"/>
+    Cm.
+</div>
+
+<div>
+    BMI: {{person.bmi | number : '1.2-2' }}
+</div>
+
+<div [ngClass]= "classForCategory()">
+    <fa-icon [icon]="faBong" size="6x" class="text-danger" ></fa-icon>
+    Category: {{person.category}}
+</div>
+
+<div *ngFor="let p of people">
+    <fa-icon [icon]="faCoffee" class="text-danger"></fa-icon>
+    {{p.height}} = {{p.bmi}}
+</div>
+
+<button class="btn btn-outline-success mr-2">
+    <fa-icon [icon]="faBolt" size="6x" class="text-danger" ></fa-icon>
+    Increase
+</button>
+
+
+
+
